@@ -1,0 +1,82 @@
+﻿@model List<Emp>
+
+
+<div class="row pb-3">
+    @foreach (var obj in Model)
+    {
+    <div class="col-lg-3 col-sm-6">
+        <div class="row p-2">
+            <div class="col-12 p-1">
+                <div class="card border-3 p-3 shadow border-top border-5 rounded">
+                    <img src="@obj.Url" class="card-img-top rounded" />
+                    <div class="pl-1">
+                        <p class="card-title h5 text-dark opacity-75 text-uppercase text-center"></p>
+                        <h5 class="card-title text-danger text-center">Name : @obj.Name</h5>
+                    </div>
+
+
+                    <div>
+                            <a asp-controller="Employee" asp-action="Details" asp-route-id="@obj.Id" class="btn btn-primary bg-gradient border-0 form-control">
+                            Details
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+
+
+@* <div  class="container">
+    <div class="row pt-4 pb-3">
+        <div class="col-6">
+            <h2 class="text-primary">Employee List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Employee" asp-action="Create" class="btn btn-primary">
+                Add <i class="bi bi-patch-plus"></i>
+            </a>
+        </div>
+    </div>
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th> Name </th>
+        <th> Email </th>
+        <th> Department </th>
+        <th> Joining Date</th>
+        <th class="text-center"> Actions </th>
+
+    </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model)
+        {
+            <tr>
+                <td>@obj.Name</td>
+                <td>@obj.Email</td>
+                <td>@obj.Department</td>
+                <td>@obj.JoiningDate</td>
+                <td>
+                    <div class="w-100 btn-group" role="group">
+                        <a asp-controller="Employee" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
+                            <i class="bi bi-pencil-square"></i>Edit
+                        </a>
+                            <a asp-controller="Employee" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger ">
+                             <i class="bi bi-pencil-square"></i>Delete
+                         </a>
+                    </div>
+                </td>
+                
+            </tr>
+        }
+       
+    </tbody>
+
+
+
+
+</table>
+</div>  *@

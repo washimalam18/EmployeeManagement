@@ -1,0 +1,67 @@
+﻿@model Employee.Models.Emp
+
+
+<form method="post">
+    <div class="card shadow border-0 mt-4">
+
+        <div class="card-body">
+            <div class="py-3">
+                <div class="row">
+                    <div class="col-6 col-md-2 offset-lg-1 pb-1">
+                        <a asp-controller="Employee" asp-action="Index" class="btn btn-outline-primary bg-gradient mb-5 fw-semibold btn-sm text-uppercase">
+                            <small>Back to home</small>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-3 offset-lg-1 text-center mb-3">
+                        <img src="@Model.Url" width="100%" class="rounded" />
+                    </div>
+
+                    <div class="col-12 col-lg-6 offset-lg-1">
+
+                        <div class="col-12 col-md-6 pb-4"></div>
+
+                        <div class="row ps-2">
+                            <h3 class="text-warning  ">NAME : @Model.Name </h3>
+                        </div>
+
+                        <div class="row ps-2">
+                            <h3 class="text-warning   pb-2">EMAIL : @Model.Email </h3>
+                        </div>
+
+                        <div class="row ps-2">
+                            <h3 class="text-warning   pb-2">DEPARTMENT : @Model.Department</h3>
+                        </div>
+
+                        <div class="row ps-2">
+                            <h3 class="text-warning  pb-2 ">JOINING DATE : @Model.JoiningDate</h3>
+                        </div>
+
+                        <div class="row text-center ps-2"></div>
+
+                        <div class="row pl-2 mb-3"><div class="col-md-4"><div class="input-group mb-3"></div></div></div>
+
+                        <div class="row">
+
+                            <div class="col-4">
+                                <a asp-controller="Employee" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-primary bg-gradient mb-5 fw-semibold text-uppercase text-warning">
+                                    <small>Update</small>
+                                </a>
+                            </div>
+
+                            <div class="col-4 ">
+                                <a asp-controller="Employee" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-outline-primary bg-gradient mb-6 fw-semibold text-uppercase text-warning">
+                                    <small>Delete</small>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

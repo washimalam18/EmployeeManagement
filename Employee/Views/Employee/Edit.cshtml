@@ -1,0 +1,92 @@
+﻿@model Employee.Models.Emp
+
+
+<form method="post" enctype="multipart/form-data" >
+    <div class="border-5 p-3 mt-4">
+
+        <div class="row pb-2 ">
+            <h2 class="text-primary text-center">Edit Employee</h2>
+            <hr />
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Name" class="p-0"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="Email" class="p-0"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Department" class="p-0"></label>
+            <input asp-for="Department" class="form-control" />
+            <span asp-validation-for="Department" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="JoiningDate" class="p-0"></label>
+            <input asp-for="JoiningDate" class="form-control" />
+            <span asp-validation-for="JoiningDate" class="text-danger"></span>
+        </div>
+        
+        <div class="mb-3 row p-1">
+            <label asp-for="Url" class="p-0"></label>
+            <input type="file" name="file" class="form-control" />
+        </div>
+
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary form-control">Update</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Employee" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-outline-secondary border-5 form-control">Back</a>
+            </div>
+        </div>
+
+
+    </div>
+</form>
+
+
+@* @model Emp
+
+
+<form method="post" ">
+    <div class="border-5 p-3 mt-4">
+        <div class="row pb-2 ">
+            <h2 class="text-primary text-center">Edit Employee</h2>
+            <hr />
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Name" class="p-0"></label>
+            <input asp-for="Name" class="form-control"  />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Email" class="p-0"></label>
+            <input asp-for="Email" class="form-control"  />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Department" class="p-0"></label>
+            <input asp-for="Department"  class="form-control"  />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="JoiningDate" class="p-0"></label>
+            <input asp-for="JoiningDate" class="form-control"  />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary form-control">Update</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Employee" asp-action="Index" class="btn btn-outline-secondary border-5 form-control">Back</a>
+            </div>
+        </div>
+
+
+    </div>
+</form>  *@
