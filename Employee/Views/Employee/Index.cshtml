@@ -1,42 +1,6 @@
 ﻿@model List<Emp>
 
-@if (Model == null || !Model.Any())
-{
-    <div class="alert alert-warning text-center mt-4" role="alert">
-        No Employee is registered. Please add an employee.
-    </div>
-}
-
-
-<div class="row pb-3">
-    @foreach (var obj in Model)
-    {
-    <div class="col-lg-3 col-sm-6">
-        <div class="row p-2">
-            <div class="col-12 p-1">
-                <div class="card border-3 p-3 shadow border-top border-5 rounded">
-                    <img src="@obj.Url" class="card-img-top rounded" />
-                    <div class="pl-1">
-                        <p class="card-title h5 text-dark opacity-75 text-uppercase text-center"></p>
-                        <h5 class="card-title text-danger text-center">Name : @obj.Name</h5>
-                    </div>
-
-
-                    <div>
-                            <a asp-controller="Employee" asp-action="Details" asp-route-id="@obj.Id" class="btn btn-primary bg-gradient border-0 form-control">
-                            Details
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    }
-</div>
-
-
-@* <div  class="container">
+<div  class="container">
     <div class="row pt-4 pb-3">
         <div class="col-6">
             <h2 class="text-primary">Employee List</h2>
@@ -86,4 +50,4 @@
 
 
 </table>
-</div>  *@
+</div> 

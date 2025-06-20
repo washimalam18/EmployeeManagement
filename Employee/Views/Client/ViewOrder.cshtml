@@ -1,0 +1,66 @@
+﻿@model Order;
+
+
+<div class="container mt-5">
+    <div class="header text-center ">
+        <h3 class="title">Order Details</h3>
+    </div>
+    <div class="body mt-4">
+        <p><strong>Order ID : </strong>@Model.Id </p>
+        <p><strong>Name : </strong> @Model.client.Name</p>
+        <p><strong>Email : </strong> @Model.client.Email </p>
+        <p><strong>Address : </strong> @Model.Address</p>
+        <p><strong>Order Total : </strong> @Model.OrderTotal</p>
+
+
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Rate</th>
+                    <th>Quantity</th>
+                    <th>Item Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.items)
+                {
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td>@item.ProductRate</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.ItemTotal </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="row mt-4">
+            <div class="col-6 col-md-3">
+                <a asp-controller="Client" asp-action="Order" asp-route-id="@Model.ClientId" class="btn btn-primary border-1 form-control">Back</a>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Client" asp-action="DownloadPdf" asp-route-id="@Model.Id" class="btn btn-outline-primary border-1 form-control">Download pdf</a>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Client" asp-action="DownloadExcel" asp-route-id="@Model.Id" class="btn btn-outline-primary border-1 form-control">Download excel</a>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Client" asp-action="DownloadWord" asp-route-id="@Model.Id" class="btn btn-outline-primary border-1 form-control">Download word</a>
+            </div>
+             
+        </div>
+
+
+
+    </div>
+</div>
+<form asp-controller="Client" asp-action="DownloadPdf" method="post">
+    
+</form>
+
+
+
+
+

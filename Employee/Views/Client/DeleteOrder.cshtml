@@ -1,0 +1,102 @@
+﻿@model Order
+
+<form asp-action="DeleteOrderItem" asp-controller="Client" method="post">
+    <div class="border-5 p-3 mt-4">
+
+
+        <div class="row pb-2 ">
+            <h2 class="text-primary text-center">Delete Order</h2>
+            
+            <input type="hidden" name="ClientId" value="@Model.ClientId" />
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <hr />
+        </div>
+
+        <div class="mb-3 row p-2">
+            <div class="row mt-5 ">
+                <h5 class="text-primary">
+                    Addresses
+                </h5>
+            </div>
+            
+            <select name="AddressId" required disabled class="form-control">
+                <option value="@Model.AddressId" selected hidden>@Model.Address</option>
+            </select>
+        </div>
+
+            
+        <div class="row mt-5 ">
+            <h5 class="text-primary">
+                Items
+            </h5>
+        </div>
+
+            <div class="container">
+                <table class="table-bordered w-100">
+
+                     <thead>
+                        <td>Product</td>
+                        <td>Rate</td>
+                        <td>Quantity</td>
+                        <td>ItemTotal</td>
+                    </thead>
+                    
+                    <tbody id="itemTableBody">
+                    
+                        @for(var i=0;i<Model.items.Count();i++)
+                        {
+                            <tr>
+                                <td>
+                                <select class="form-control product-select" name="items[@i].ProductId" disabled>
+                                       <option value="@Model.items[i].ProductId" selected hidden>@Model.items[i].ProductName</option>
+                                    </select>
+                                </td>
+                                <td>
+                                <input type="number" step="0.01" name="items[@i].Rate" class="form-control price" placeholder="Price" value="@Model.items[i].ProductRate" disabled />
+                                </td>
+                                 <td>
+                                <input type="number" name="items[@i].Quantity" class="form-control quantity" min="1" placeholder="Quantity" required value="@Model.items[i].Quantity" disabled />
+                                 </td>
+                                 <td>
+                                <input type="text" name="items[@i].ItemTotal" class="form-control total" placeholder="Total" value="@Model.items[i].ItemTotal" disabled />
+                                 </td>
+                                  
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <div class="row mt-6 flex-nowrap justify-content-between">
+                     <div class="col-auto m-4">
+                        
+                     </div>
+
+                     <div class="col-auto d-flex align-items-center mt-3">
+                         <label ><strong>Order Total:</strong></label>
+                         <input type="text" name="OrderTotal" id="orderTotalDisplay" class="form-control-plaintext " value="@Model.OrderTotal" disabled />
+                     </div>
+
+                      
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-6 col-md-3">
+                    <button type="submit" class="btn btn-primary form-control">Delete</button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a asp-controller="Client" asp-action="Order" asp-route-id="@Model.ClientId" class="btn btn-outline-primary border-1 form-control">Back</a>
+                </div>
+            </div>
+
+        
+    </div>
+</form>
+
+
+
+
+
+
+
+

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\injam\\source\\repos\\Employee\\Employee\\Employee.csproj": {}
+    "C:\\washim\\Employee\\Employee\\Employee.csproj": {}
   },
   "projects": {
-    "C:\\Users\\injam\\source\\repos\\Employee\\Employee\\Employee.csproj": {
+    "C:\\washim\\Employee\\Employee\\Employee.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\injam\\source\\repos\\Employee\\Employee\\Employee.csproj",
+        "projectUniqueName": "C:\\washim\\Employee\\Employee\\Employee.csproj",
         "projectName": "Employee",
-        "projectPath": "C:\\Users\\injam\\source\\repos\\Employee\\Employee\\Employee.csproj",
-        "packagesPath": "C:\\Users\\injam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\injam\\source\\repos\\Employee\\Employee\\obj\\",
+        "projectPath": "C:\\washim\\Employee\\Employee\\Employee.csproj",
+        "packagesPath": "C:\\Users\\Admiin\\.nuget\\packages\\",
+        "outputPath": "C:\\washim\\Employee\\Employee\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\injam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admiin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -50,9 +51,25 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.105.0, )"
+            },
+            "DocX": {
+              "target": "Package",
+              "version": "[4.0.25105.5786, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[6.0.2, )"
+            },
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2025.5.1, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[9.0.6, )"
             }
           },
           "imports": [
@@ -74,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

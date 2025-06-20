@@ -1,0 +1,64 @@
+﻿@model List<Clients>
+
+<div class="container">
+    <div class="row pt-4 pb-3">
+        <div class="col-6">
+            <h2 class="text-primary">Client List</h2>
+        </div>
+
+        <div class="col-6 text-end">
+            <a asp-controller="Client" asp-action="Create" class="btn btn-primary">
+                Add <i class="bi bi-patch-plus"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th> Name </th>
+                <th> Email </th>
+                <th> Role </th>
+                <th class="text-center"> Actions </th>
+
+            </tr>
+        </thead>
+
+
+        <tbody>
+            @foreach (var obj in Model)
+             {
+               <tr>
+                    <td>@obj.Name</td>
+                    <td>@obj.Email</td>
+                    <td>@obj.Role</td>
+
+                    <td>
+                        <div class="w-100 btn-group" role="group">
+                            <a asp-controller="Client" asp-action="Order" asp-route-id="@obj.Id" class="btn btn-info mx-2">
+                                Order
+                            </a>
+                            <a asp-controller="Client" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
+                                Edit
+                            </a>
+                            <a asp-controller="Client" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger ">
+                                Delete
+                            </a>
+                        </div>
+                    </td>
+
+               </tr>
+             }
+
+        </tbody>
+
+
+
+
+    </table>
+
+</div>
+
+
+

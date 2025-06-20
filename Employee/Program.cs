@@ -1,11 +1,25 @@
+using Employee.Services;
+
 var builder = WebApplication.CreateBuilder(args);
+
+QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
+
+
+builder.Services.AddScoped<WordService>();
+builder.Services.AddScoped<ExcelService>();
+builder.Services.AddScoped<PdfService>(); 
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 //builder.Services.AddDbContext<ApplicationDbContext>(options=> 
 //   options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
+
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -24,6 +38,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Employee}/{action=Index}/{id?}");
+    pattern: "{controller=Employee}/{action=Home}/{id?}");
 
 app.Run();
