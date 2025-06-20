@@ -15,7 +15,7 @@ namespace Employee.Models
         [Required]
         public string Department { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The Date field is required.")]
         [Display(Name = "Joining Date")]
         public DateOnly JoiningDate { get; set; }
 
@@ -23,7 +23,7 @@ namespace Employee.Models
         public String Url { get; set; }
 
 
-
+       
 
     }
 }

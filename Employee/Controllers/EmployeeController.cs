@@ -1,6 +1,7 @@
 ﻿using Employee.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Employee.Controllers
 {
@@ -18,6 +19,36 @@ namespace Employee.Controllers
             _webHostEnvironment = webHostEnvironment;
             _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
+
+        public IActionResult Home()
+        {
+
+            List<Emp> employees = new List<Emp>();
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = "SELECT * FROM Employee";
+                SqlCommand sqlCommand = new SqlCommand(query, con);
+                con.Open();
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    employees.Add(new Emp()
+                    {
+                        Id = Convert.ToInt32(reader["Id"]),
+                        Name = reader["Name"].ToString(),
+                        Email = reader["Email"].ToString(),
+                        Department = reader["Department"].ToString(),
+                        JoiningDate = DateOnly.FromDateTime(Convert.ToDateTime(reader["JoiningDate"])),
+                        Url = reader["Url"].ToString()
+
+                    });
+                }
+
+                return View(employees);
+
+            }
+        }
+
         public IActionResult Index()
         {
             
@@ -56,6 +87,11 @@ namespace Employee.Controllers
         public IActionResult Create(Emp obj,IFormFile? file)
 
         {
+            if (obj.Name.IsNullOrEmpty() || obj.Email.IsNullOrEmpty() || obj.Department.IsNullOrEmpty() || obj.JoiningDate == null)
+            {
+                return View(obj);
+            }
+
             string wwwRootPath = _webHostEnvironment.WebRootPath;
             if (file != null)
             {
@@ -187,73 +223,71 @@ namespace Employee.Controllers
         [HttpPost, ActionName("Edit")]
         public IActionResult EditPost(Emp obj,IFormFile? file)
         {
-            if (true)
+            if (obj.Name.IsNullOrEmpty() || obj.Email.IsNullOrEmpty() || obj.Department.IsNullOrEmpty() || obj.JoiningDate == null)
             {
-                string wwwRootPath = _webHostEnvironment.WebRootPath;
-                if (file != null)
-                {
-                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-                    String profilePath = Path.Combine(wwwRootPath, @"images\profile");
+                return View(obj);
+            }
 
-                    using (var fileStream = new FileStream(Path.Combine(profilePath, fileName), FileMode.Create))
-                    {
-                        file.CopyTo(fileStream);
-                    }
-                    obj.Url = @"\images\profile\" + fileName;
+             string wwwRootPath = _webHostEnvironment.WebRootPath;
+             if (file != null)
+             {
+                string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                String profilePath = Path.Combine(wwwRootPath, @"images\profile");
+
+                 using (var fileStream = new FileStream(Path.Combine(profilePath, fileName), FileMode.Create))
+                 {
+                    file.CopyTo(fileStream);
+                 }
+                 obj.Url = @"\images\profile\" + fileName;
 
 
-                    using (SqlConnection con = new SqlConnection(_connectionString))
-                    {
-                        string query = @"UPDATE Employee 
-                        SET Name = @Name, Email = @Email, Department = @Department, 
-                        JoiningDate = @JoiningDate, Url = @Url 
-                        WHERE Id = @Id";
-
-                        using (SqlCommand cmd = new SqlCommand(query, con))
-                        {
-                            cmd.Parameters.AddWithValue("@Name", obj.Name);
-                            cmd.Parameters.AddWithValue("@Email", obj.Email);
-                            cmd.Parameters.AddWithValue("@Department", obj.Department);
-                            cmd.Parameters.AddWithValue("@JoiningDate", obj.JoiningDate);
-                            cmd.Parameters.AddWithValue("@Url", obj.Url);
-                            cmd.Parameters.AddWithValue("@Id", obj.Id);
-
-                            con.Open();
-                            cmd.ExecuteNonQuery();
-                        }
-                    }
-
-                }
-
-                using (SqlConnection con = new SqlConnection(_connectionString))
-                {
+                 using (SqlConnection con = new SqlConnection(_connectionString))
+                 {
                     string query = @"UPDATE Employee 
                     SET Name = @Name, Email = @Email, Department = @Department, 
-                    JoiningDate = @JoiningDate 
+                    JoiningDate = @JoiningDate, Url = @Url 
                     WHERE Id = @Id";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        cmd.Parameters.AddWithValue("@Name", obj.Name);
-                        cmd.Parameters.AddWithValue("@Email", obj.Email);
-                        cmd.Parameters.AddWithValue("@Department", obj.Department);
-                        cmd.Parameters.AddWithValue("@JoiningDate", obj.JoiningDate);
-                        cmd.Parameters.AddWithValue("@Id", obj.Id);
+                       cmd.Parameters.AddWithValue("@Name", obj.Name);
+                       cmd.Parameters.AddWithValue("@Email", obj.Email);
+                       cmd.Parameters.AddWithValue("@Department", obj.Department);
+                       cmd.Parameters.AddWithValue("@JoiningDate", obj.JoiningDate);
+                       cmd.Parameters.AddWithValue("@Url", obj.Url);
+                       cmd.Parameters.AddWithValue("@Id", obj.Id);
 
-                        con.Open();
-                        cmd.ExecuteNonQuery();
+                       con.Open();
+                       cmd.ExecuteNonQuery();
                     }
+                 }
+
+             }
+
+             using (SqlConnection con = new SqlConnection(_connectionString))
+             {
+                string query = @"UPDATE Employee 
+                SET Name = @Name, Email = @Email, Department = @Department, 
+                JoiningDate = @JoiningDate 
+                WHERE Id = @Id";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                   cmd.Parameters.AddWithValue("@Name", obj.Name);
+                   cmd.Parameters.AddWithValue("@Email", obj.Email);
+                   cmd.Parameters.AddWithValue("@Department", obj.Department);
+                   cmd.Parameters.AddWithValue("@JoiningDate", obj.JoiningDate);
+                   cmd.Parameters.AddWithValue("@Id", obj.Id);
+
+                   con.Open();
+                   cmd.ExecuteNonQuery();
                 }
+             }
 
+             TempData["success"] = "Employee Updated succesfully";
+             return RedirectToAction("Index");
 
-
-
-
-                TempData["success"] = "Employee Updated succesfully";
-                return RedirectToAction("Index");
-
-            }
-               
+  
             
         }
 
