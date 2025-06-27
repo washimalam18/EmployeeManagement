@@ -285,17 +285,11 @@ namespace Employee.Controllers
                     string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
                     String profilePath = Path.Combine(wwwRootPath, @"images\profile");
 
-             string wwwRootPath = _webHostEnvironment.WebRootPath;
-             if (file != null)
-             {
-                string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-                String profilePath = Path.Combine(wwwRootPath, @"images\profile");
-
-                 using (var fileStream = new FileStream(Path.Combine(profilePath, fileName), FileMode.Create))
-                 {
-                    file.CopyTo(fileStream);
-                 }
-                 obj.Url = @"\images\profile\" + fileName;
+                    using (var fileStream = new FileStream(Path.Combine(profilePath, fileName), FileMode.Create))
+                    {
+                        file.CopyTo(fileStream);
+                    }
+                    obj.Url = @"\images\profile\" + fileName;
 
 
                     using (SqlConnection con = new SqlConnection(_connectionString))
@@ -330,39 +324,16 @@ namespace Employee.Controllers
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                       cmd.Parameters.AddWithValue("@Name", obj.Name);
-                       cmd.Parameters.AddWithValue("@Email", obj.Email);
-                       cmd.Parameters.AddWithValue("@Department", obj.Department);
-                       cmd.Parameters.AddWithValue("@JoiningDate", obj.JoiningDate);
-                       cmd.Parameters.AddWithValue("@Url", obj.Url);
-                       cmd.Parameters.AddWithValue("@Id", obj.Id);
+                        cmd.Parameters.AddWithValue("@Name", obj.Name);
+                        cmd.Parameters.AddWithValue("@Email", obj.Email);
+                        cmd.Parameters.AddWithValue("@Department", obj.Department);
+                        cmd.Parameters.AddWithValue("@JoiningDate", obj.JoiningDate);
+                        cmd.Parameters.AddWithValue("@Id", obj.Id);
 
-                       con.Open();
-                       cmd.ExecuteNonQuery();
+                        con.Open();
+                        cmd.ExecuteNonQuery();
                     }
-                 }
-
-             }
-
-             using (SqlConnection con = new SqlConnection(_connectionString))
-             {
-                string query = @"UPDATE Employee 
-                SET Name = @Name, Email = @Email, Department = @Department, 
-                JoiningDate = @JoiningDate 
-                WHERE Id = @Id";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                   cmd.Parameters.AddWithValue("@Name", obj.Name);
-                   cmd.Parameters.AddWithValue("@Email", obj.Email);
-                   cmd.Parameters.AddWithValue("@Department", obj.Department);
-                   cmd.Parameters.AddWithValue("@JoiningDate", obj.JoiningDate);
-                   cmd.Parameters.AddWithValue("@Id", obj.Id);
-
-                   con.Open();
-                   cmd.ExecuteNonQuery();
                 }
-             }
 
                 TempData["success"] = "Employee Updated succesfully";
                 return RedirectToAction("Index");
@@ -377,7 +348,6 @@ namespace Employee.Controllers
   
             
         }
-
         public IActionResult Delete(int? id)
         {
             try

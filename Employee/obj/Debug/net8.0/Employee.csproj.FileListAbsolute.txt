@@ -75,9 +75,23 @@ C:\Users\injam\source\repos\Employee\Employee\bin\Debug\net8.0\runtimes\unix\lib
 C:\Users\injam\source\repos\Employee\Employee\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
 C:\Users\injam\source\repos\Employee\Employee\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 C:\Users\injam\source\repos\Employee\Employee\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\washim\Employee\Employee\bin\Debug\net8.0\Employee.exe
+C:\washim\Employee\Employee\bin\Debug\net8.0\Employee.dll
+C:\washim\Employee\Employee\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\washim\Employee\Employee\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\washim\Employee\Employee\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.csproj.AssemblyReference.cache
+C:\washim\Employee\Employee\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.GeneratedMSBuildEditorConfig.editorconfig
+C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.AssemblyInfoInputs.cache
+C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.AssemblyInfo.cs
+C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.csproj.CoreCompileInputs.cache
+C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.MvcApplicationPartsAssemblyInfo.cache
+C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.RazorAssemblyInfo.cache
+C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.RazorAssemblyInfo.cs
+C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.sourcelink.json
 C:\washim\Employee\Employee\bin\Debug\net8.0\appsettings.Development.json
 C:\washim\Employee\Employee\bin\Debug\net8.0\appsettings.json
-<<<<<<< HEAD
 C:\washim\Employee\Employee\bin\Debug\net8.0\libman.json
 C:\washim\Employee\Employee\bin\Debug\net8.0\Employee.staticwebassets.runtime.json
 C:\washim\Employee\Employee\bin\Debug\net8.0\Employee.staticwebassets.endpoints.json
@@ -100,18 +114,11 @@ C:\washim\Employee\Employee\bin\Debug\net8.0\LatoFont\Lato-SemiBoldItalic.ttf
 C:\washim\Employee\Employee\bin\Debug\net8.0\LatoFont\Lato-Thin.ttf
 C:\washim\Employee\Employee\bin\Debug\net8.0\LatoFont\Lato-ThinItalic.ttf
 C:\washim\Employee\Employee\bin\Debug\net8.0\LatoFont\OFL.txt
-=======
-C:\washim\Employee\Employee\bin\Debug\net8.0\Employee.staticwebassets.runtime.json
-C:\washim\Employee\Employee\bin\Debug\net8.0\Employee.staticwebassets.endpoints.json
->>>>>>> 8a0426c1095fa6c8ae93542ae6490fd425405799
-C:\washim\Employee\Employee\bin\Debug\net8.0\Employee.exe
 C:\washim\Employee\Employee\bin\Debug\net8.0\Employee.deps.json
 C:\washim\Employee\Employee\bin\Debug\net8.0\Employee.runtimeconfig.json
-C:\washim\Employee\Employee\bin\Debug\net8.0\Employee.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\Employee.pdb
 C:\washim\Employee\Employee\bin\Debug\net8.0\Azure.Core.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\Azure.Identity.dll
-<<<<<<< HEAD
 C:\washim\Employee\Employee\bin\Debug\net8.0\ClosedXML.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\ClosedXML.Parser.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
@@ -120,8 +127,6 @@ C:\washim\Employee\Employee\bin\Debug\net8.0\Xceed.Document.NET.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\Xceed.Drawing.NET.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\Xceed.Words.NET.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\ExcelNumberFormat.dll
-=======
->>>>>>> 8a0426c1095fa6c8ae93542ae6490fd425405799
 C:\washim\Employee\Employee\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\Microsoft.Bcl.Cryptography.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
@@ -138,25 +143,17 @@ C:\washim\Employee\Employee\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.d
 C:\washim\Employee\Employee\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-<<<<<<< HEAD
 C:\washim\Employee\Employee\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\QuestPDF.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\RBush.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\SixLabors.Fonts.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\SkiaSharp.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\System.ClientModel.dll
-C:\washim\Employee\Employee\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\System.Drawing.Common.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\System.Private.Windows.Core.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\System.IO.Packaging.dll
-=======
-C:\washim\Employee\Employee\bin\Debug\net8.0\System.ClientModel.dll
-C:\washim\Employee\Employee\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-C:\washim\Employee\Employee\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
-C:\washim\Employee\Employee\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
->>>>>>> 8a0426c1095fa6c8ae93542ae6490fd425405799
 C:\washim\Employee\Employee\bin\Debug\net8.0\System.Memory.Data.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
@@ -174,11 +171,8 @@ C:\washim\Employee\Employee\bin\Debug\net8.0\tr\Microsoft.Data.SqlClient.resourc
 C:\washim\Employee\Employee\bin\Debug\net8.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
-C:\washim\Employee\Employee\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\washim\Employee\Employee\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-<<<<<<< HEAD
 C:\washim\Employee\Employee\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\runtimes\linux-arm64\native\libQuestPdfSkia.so
 C:\washim\Employee\Employee\bin\Debug\net8.0\runtimes\linux-arm64\native\libcrypto.so
@@ -214,20 +208,8 @@ C:\washim\Employee\Employee\bin\Debug\net8.0\runtimes\osx\native\libSkiaSharp.dy
 C:\washim\Employee\Employee\bin\Debug\net8.0\runtimes\win-arm64\native\libSkiaSharp.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\runtimes\win-x64\native\libSkiaSharp.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\runtimes\win-x86\native\libSkiaSharp.dll
-=======
->>>>>>> 8a0426c1095fa6c8ae93542ae6490fd425405799
 C:\washim\Employee\Employee\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 C:\washim\Employee\Employee\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
-C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.csproj.AssemblyReference.cache
-C:\washim\Employee\Employee\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.GeneratedMSBuildEditorConfig.editorconfig
-C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.AssemblyInfoInputs.cache
-C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.AssemblyInfo.cs
-C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.csproj.CoreCompileInputs.cache
-C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.MvcApplicationPartsAssemblyInfo.cache
-C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.RazorAssemblyInfo.cache
-C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.RazorAssemblyInfo.cs
-C:\washim\Employee\Employee\obj\Debug\net8.0\Employee.sourcelink.json
 C:\washim\Employee\Employee\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\washim\Employee\Employee\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\washim\Employee\Employee\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
